@@ -1,0 +1,30 @@
+def power(a):
+    c = 0
+    for i in a:
+        c += i
+    return c
+
+
+
+def lucha(list_a,list_b):
+    supervivientes_ataque = 0
+    supervivientes_defensa = 0
+    if len(list_a) != len(list_b):
+        if power(list_b) >= power(list_a):
+            return True
+    else:
+        for i in range(len(list_a)):
+            if list_a[i]  < list_b[i]:
+                supervivientes_defensa +=1
+            elif list_a[i] > list_b[i]:
+                supervivientes_ataque +=1
+            else:
+                supervivientes_ataque +=0
+                supervivientes_defensa +=0
+        if supervivientes_defensa > supervivientes_ataque:
+            return True
+        elif supervivientes_defensa < supervivientes_ataque:
+            return False
+        else:
+            if list_b[0] >= list_a[0]:
+                return True
